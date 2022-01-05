@@ -23,13 +23,13 @@ var config = {
   
     // Get values
     var name = getInputVal('name');
-    var company = getInputVal('company');
+    var aadhar = getInputVal('aadhar');
     var email = getInputVal('email');
     var phone = getInputVal('phone');
-    var message = getInputVal('message');
+    var pan = getInputVal('pan');
   
     // Save message
-    saveMessage(name, company, email, phone, message);
+    saveMessage(name, aadhar, email, phone, pan);
   
     // Show alert
     document.querySelector('.alert').style.display = 'block';
@@ -49,13 +49,13 @@ var config = {
   }
   
   // Save message to firebase
-  function saveMessage(name, company, email, phone, message){
+  function saveMessage(name, aadhar, email, phone, pan){
     var newMessageRef = messagesRef.push();
     newMessageRef.set({
       name: name,
-      company:company,
+      aadhar:aadhar,
       email:email,
       phone:phone,
-      message:message
+      pan:pan
     });
   }
